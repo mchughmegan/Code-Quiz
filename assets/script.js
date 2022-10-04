@@ -12,20 +12,20 @@
 
 //create variables
 
-var question1: {
-    h2: "What does API stand for?",
+var question1= {
+    h2: ("What does API stand for?"),
     choice: ['application programming interfaces', 'application programming idea', 'artistic programming interface', 'artistic programming idea'], 
     rightanswer: 0
 };
 
-var question2: {
-    h2: "What does DOM stand for?",
+var question2= {
+    h2: ("What does DOM stand for?"),
     choice: ['Document Outer Model', 'Direct Object Meaning', 'Document Object Model', 'Direct Object Model'], 
     rightanswer: 2
 };
 
-var question3: {
-    h2: "What does CSS stand for?",
+var question3= {
+    h2: ("What does CSS stand for?"),
     choice: ['complete style sheets', 'complete simple sheets', 'cascading simple sheets', 'cascading style sheets'], 
     rightanswer: 3
 };
@@ -53,5 +53,5 @@ function inputInitials () {
 
 //display scores
 function highScores (){
-    
+
 }
