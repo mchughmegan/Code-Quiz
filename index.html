@@ -9,8 +9,12 @@
 </head>
 <body>
 
+<div class = "timer">
+    time: <span id = "time">0</span>
+</div>
+
 <!-- Main Page Section -->
-    <section class = "main">
+    <section class = "main" id="startscreen">
         <div id = "begin" class = "centerpage">
             <h1>Let's Begin Our Game</h1>
             <button id= "start" class="btn">Play Game</button>
@@ -18,25 +22,25 @@
     </section>
   
 <!-- Quiz Questions -->
-    <section class = "playQuiz">
-        <h2 question = "ask">Actual Question</h2>
-        <ul>
-            <li class = "choice"><button id= "choicebutton" class="btn">Choice 1</button></li>
-            <li class = "choice"><button id= "choicebutton" class="btn">Choice 2</button></li>
-            <li class = "choice"><button id= "choicebutton" class="btn">Choice 3</button></li>
-            <li class = "choice"><button id= "choicebutton" class="btn">Choice 4</button></li>
-        </ul>
+    <section class = "playQuiz hide" id = "questions">
+        <h2 id="questiontitle"></h2>
+        <div id = "choices" class="choices">
 
-        <button id= "next" class="btn">Next</button>
+        </div>
+           
     </section>
 
 <!-- Score and Enter Initials -->
-    <section class = enterInitials>
+    <section class = "enterInitials hide">
         <h3>Enter your initials to save your score</h3>
-        <button id= "scores" class="btn">Rankings</button>
+        <p>Enter Initials: <input type="text" id="initials" max="3"/>
+            <button id= "scores submit" class="btn">Rankings</button>
+        </p>
+        
     </section>
 </body>
 
 <script src="./assets/script.js"></script>
+<script src="./assets/questions.js"></script>
 
 </html> 

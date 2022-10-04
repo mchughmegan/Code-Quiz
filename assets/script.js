@@ -12,46 +12,65 @@
 
 //create variables
 
-var question1= {
-    h2: ("What does API stand for?"),
-    choice: ['application programming interfaces', 'application programming idea', 'artistic programming interface', 'artistic programming idea'], 
-    rightanswer: 0
-};
+var time = 60;
+var currentquestionindex = 0;
+var timerid;
 
-var question2= {
-    h2: ("What does DOM stand for?"),
-    choice: ['Document Outer Model', 'Direct Object Meaning', 'Document Object Model', 'Direct Object Model'], 
-    rightanswer: 2
-};
 
-var question3= {
-    h2: ("What does CSS stand for?"),
-    choice: ['complete style sheets', 'complete simple sheets', 'cascading simple sheets', 'cascading style sheets'], 
-    rightanswer: 3
-};
-
-var score = 0;
-var points = 100;
+var questionsel = document.getElementById("questions");
+var timerel = document.getElementById("time");
+var choicesel = document.getElementById("choices");
+var submitbtn = document.getElementById("submit");
+var startbtn = document.getElementById("start");
+var initialsel = document.getElementById("initials");
 
 //start  button
 function startgame(){
-    document.getElementsByClassName("play quiz").style.display = "none";
-    document.getElementsByClassName("enterinitials").style.display = "none";   
+  var startscreenel = document.getElementById("startscreen");
+  startscreenel.setAttribute("class", "hide");
+  questionsel.removeAttribute("class", "hide");
+  timerid = setInterval(clocktick,1000);
+  timerel.textContent = time;
+  playgame();     
 }
 
+function clocktick () {
+    time--;
+    timerel.textContent = time;
+    if (time <= 0) {
+        quizend();
+    }
+}
 //present question and timer starts
 function playgame() {
-    document.getElementsByClassName("main").style.display = "none";
-    document.getElementsByClassName("enterinitials").style.display = "none";   
+      //get current question, set the title of the question to be the question, populate with choices
+      var currentquestion = questions[currentquestionindex];
+      var titleel = document.getElementById("questiontitle");
+      titleel.textcontent = currentquestion.question;
+      choicesel.innerHTML = "";
+      for (var i = 0; i < currentquestion.choices.length; i++){
+        var choice = currentquestion.choices[i];
+        var choicenode = document.createElement("button");
+        choicenode.setAttribute("class", "choice");
+        choicenode.setAttribute("value", choice);
+        choicenode.textContent= i+1+". " + choice;
+        choicesel.appendChild(choicenode);
+      }
 }
+
+//function to handle when a user clicks a choice
+    //increment the current question index
 
 //saveinitials and score
 function inputInitials () {
-    document.getElementsByClassName("play quiz").style.display = "none";
-    document.getElementsByClassName("main").style.display = "none";   
+     
 }
 
 //display scores
 function highScores (){
 
+}
+
+function quizend (){
+    //clear interval, show end screen, hide questions
 }
