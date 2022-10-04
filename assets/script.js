@@ -34,13 +34,24 @@ var score = 0;
 var points = 100;
 
 //start  button
-function startgame(){}
+function startgame(){
+    document.getElementsByClassName("play quiz").style.display = "none";
+    document.getElementsByClassName("enterinitials").style.display = "none";   
+}
 
 //present question and timer starts
-function playgame() {}
+function playgame() {
+    document.getElementsByClassName("main").style.display = "none";
+    document.getElementsByClassName("enterinitials").style.display = "none";   
+}
 
 //saveinitials and score
-function inputInitials () {}
+function inputInitials () {
+    document.getElementsByClassName("play quiz").style.display = "none";
+    document.getElementsByClassName("main").style.display = "none";   
+}
 
 //display scores
-function highScores (){}
+function highScores (){
+    
+}
