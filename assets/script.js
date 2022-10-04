@@ -25,7 +25,11 @@ var startbtn = document.getElementById("start");
 var initialsel = document.getElementById("initials");
 
 //start  button
+
+startbtn.onclick = startgame;
+
 function startgame(){
+
   var startscreenel = document.getElementById("startscreen");
   startscreenel.setAttribute("class", "hide");
   questionsel.removeAttribute("class", "hide");
@@ -60,11 +64,11 @@ function playgame() {
 
 //function to handle when a user clicks a choice
     //increment the current question index
+function clickchoice {
 
-//saveinitials and score
-function inputInitials () {
-     
+    
 }
+
 
 //display scores
 function highScores (){
@@ -73,4 +77,14 @@ function highScores (){
 
 function quizend (){
     //clear interval, show end screen, hide questions
+    time = 0;
+    questionsel.setAttribute("class", "hide");
+    var endscreenel = document.getElementById("enterInitials");
+    endscreenel.removeAttribute("class", "hide");
+
+}
+
+//saveinitials and score
+function inputInitials () {
+     
 }
