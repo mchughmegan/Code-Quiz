@@ -23,13 +23,6 @@ h1 {
     text-align: center;
 }
 
-h2 {
-    font-size: 40px;
-    color: white;
-    margin-top: 5px;
-    margin-bottom: 30px;
-}
-
 .card {
     
     display:flex;
@@ -46,7 +39,13 @@ h2 {
     padding: 30px 40px;
   }
 
-  .playquiz {
+h2 {
+    font-size: 40px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.playquiz {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -59,17 +58,22 @@ h2 {
     margin: 0 auto;
     max-width: 800px;
     padding: 30px 40px; 
-  }
+}
 
   ul {
     list-style: none;
   }
 
-  .centerpage {
+  /* .centerpage {
     display: flex;
     flex-direction: column;
-  }
-
+  } */
+h3 {
+    font-size: 40px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
   .btn {
     border: none;
     background-color:#420E43;
