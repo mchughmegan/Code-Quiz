@@ -64,9 +64,8 @@ function playgame() {
 
 //function to handle when a user clicks a choice
     //increment the current question index
-function clickchoice {
-
-    
+function clickchoice (){
+    button.onclick
 }
 
 
@@ -77,7 +76,6 @@ function highScores (){
 
 function quizend (){
     //clear interval, show end screen, hide questions
-    time = 0;
     questionsel.setAttribute("class", "hide");
     var endscreenel = document.getElementById("enterInitials");
     endscreenel.removeAttribute("class", "hide");

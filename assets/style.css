@@ -45,6 +45,8 @@ h2 {
     margin-top: 5px;
     margin-bottom: 30px;
 }
+
+
 .playquiz {
     display:flex;
     justify-content: center;
@@ -89,7 +91,44 @@ h3 {
     text-align: center;
     cursor: pointer;
   }
+.btn:hover {
+    background-color:hsl(0, 0%, 100%);
+    color: #420E43;
+}
 
   .hide {
     display:none;
   }
+
+.choice {
+    border: none;
+    background-color:#420E43;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .choice:hover {
+    background-color:hsl(0, 0%, 100%);
+    color: #420E43;
+
+  }
+
+  #questiontitle {
+    font-size: 40px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 30px;
+
+  }
+
+
+  
