@@ -41,6 +41,7 @@ var choicesel = document.getElementById("choices");
 var submitbtn = document.getElementById("submit");
 var startbtn = document.getElementById("start");
 var initialsel = document.getElementById("initials");
+var playerscore = document.getElementById("score");
 
 
 //start  button
@@ -108,6 +109,8 @@ function quizend (){
     questionsel.setAttribute("class", "hide");
     var endscreenel = document.getElementById("enterInitials");
     endscreenel.removeAttribute("class", "hide");
+    playerscore.textContent = time;
+    console.log(time);
 
 }
 
