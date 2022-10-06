@@ -42,7 +42,9 @@ var submitbtn = document.getElementById("submit");
 var startbtn = document.getElementById("start");
 var initialsel = document.getElementById("initials");
 var playerscore = document.getElementById("score");
-
+var highscores = document.getElementById("userHighscores");
+var highscoresel = document.getElementById("highscorespage");
+var endscreenel = document.getElementById("enterInitials");
 
 //start  button
 
@@ -106,20 +108,46 @@ else (quizend());
 function quizend (){
     //clear interval, show end screen, hide questions
     clearInterval(timerid);
+    if (time<0) {time=0;
+        timerel.textContent = time;};
+    // timerel.textContent = time;
     questionsel.setAttribute("class", "hide");
-    var endscreenel = document.getElementById("enterInitials");
+    
     endscreenel.removeAttribute("class", "hide");
     playerscore.textContent = time;
-    console.log(time);
-
+    var savebutton = document.getElementById("submit");
+    // savebutton.addEventListener.apply('click', saveinfo);
+    savebutton.onclick = saveinfo;
+    
 }
 
-//saveinitials and score
-function inputInitials () {
-     
+// saveinitials and score
+function saveinfo(e) {
+    e.preventDefault();
+    // playerscore.textContent = time;
+    playerscore.value = time;
+    console.log(playerscore);
+    console.log(initialsel.value);
+    // if (!userInitials){alert ("You must enter initials to save high score")
+    // return;
+    // };
+    var highscores = [initialsel.value,time];
+    //pull then push;
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+    displayhighScores();
 }
 
 //display scores
-function highScores (){
+function displayhighScores() {
+    highscoresel.removeAttribute("class", "hide");
+    endscreenel.setAttribute("class", "hide");
+      
+
+    //pull arrays from local storage
+    //for loop to cycle through arrays and display content
     
+    //event listener for clear button
+    //event listener for play again
+    // var restart = document.getElementById("playagain");
+    // restart.addEventListener("click", startgame);
 }
