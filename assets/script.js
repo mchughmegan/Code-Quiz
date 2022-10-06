@@ -32,7 +32,14 @@ var questionsarray= [{
     question: ("What does CSS stand for?"),
     choices: ['complete style sheets', 'complete simple sheets', 'cascading simple sheets', 'cascading style sheets'], 
     answer: 'cascading style sheets'
-}];
+},
+
+{
+    question: ("What does HTML stand for?"),
+    choices: ['hypertext marketing laws', 'hypertext marketing language', 'hypertext markup laws', 'hypertext markup language'], 
+    answer: 'hypertext markup language'
+}
+];
 
 
 var questionsel = document.querySelector("#questions");
@@ -42,9 +49,10 @@ var submitbtn = document.getElementById("submit");
 var startbtn = document.getElementById("start");
 var initialsel = document.getElementById("initials");
 var playerscore = document.getElementById("score");
-var highscores = document.getElementById("userHighscores");
+// var highscores = document.getElementById("userHighscores");
 var highscoresel = document.getElementById("highscorespage");
 var endscreenel = document.getElementById("enterInitials");
+
 
 //start  button
 
@@ -99,7 +107,7 @@ function clickchoice (e){
  else {time = time-10;    
 }
 
-if (currentquestionindex<3) {playgame()}
+if (currentquestionindex<4) {playgame()}
 else (quizend());
 
  } 
@@ -131,9 +139,11 @@ function saveinfo(e) {
     // if (!userInitials){alert ("You must enter initials to save high score")
     // return;
     // };
-    var highscores = [initialsel.value,time];
+    var highscores =  [initialsel.value, time];
+        
     //pull then push;
     localStorage.setItem("highscores", JSON.stringify(highscores));
+    
     displayhighScores();
 }
 
@@ -141,7 +151,8 @@ function saveinfo(e) {
 function displayhighScores() {
     highscoresel.removeAttribute("class", "hide");
     endscreenel.setAttribute("class", "hide");
-      
+    var highscores = JSON.parse(localStorage.getItem("highscores"));
+    document.getElementById("userHighscores").append(highscores[0] + " " + highscores[1]);
 
     //pull arrays from local storage
     //for loop to cycle through arrays and display content
